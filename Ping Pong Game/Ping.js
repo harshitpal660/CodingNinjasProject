@@ -51,7 +51,13 @@ let dy = 0.4;
 
 // this function is responsible to move ball detect collision and to check whether its Game Over or not
 function moveBall() {
-    
+
+    // gradually increasing seed of ball
+    if((score+1)%6 == 0){
+        dy += 0.05;
+        dx += 0.05;
+
+    }
     // x and y are the pixcel coordinates of ball
     let x = ball.getBoundingClientRect().x;
     let y = ball.getBoundingClientRect().y;
@@ -63,10 +69,10 @@ function moveBall() {
     // leftB(left wall)
     if(x<=leftB ){
         if(dx<0 && dy>0){
-            dx = 0.4;
+            dx = dx-(dx*2);
             
         }else if(dx<0 && dy<0){
-            dx = 0.4;
+            dx = dx-(dx*2);
         }
     }
 
@@ -74,10 +80,10 @@ function moveBall() {
     // topB(top wall)
     else if(y<=topB ){
         if(dx>0 && dy<0){
-            dy = 0.4;
+            dy = dy-(dy*2);
             
         }else if(dx<0 && dy<0){
-            dy = 0.4;
+            dy = dy-(dy*2);
         }
     }
 
@@ -85,9 +91,9 @@ function moveBall() {
     // rightB(right wall)
     else if(x+ballD>=rightB){
         if(dx>0 && dy>0){
-            dx = -0.4;
+            dx = dx-(dx*2);
         }else if(dx>0 && dy<0){
-            dx = -0.4;
+            dx = dx-(dx*2);
         }
     }
 
@@ -108,9 +114,9 @@ function moveBall() {
     // this condition checks whether bat hit the ball or not
     if(x>=hitRange[0] && x<=hitRange[1] && y+ballD>=bat.getBoundingClientRect().y){
         if(dx>0 && dy>0){
-            dy = -0.4;
+            dy = dy-(dy*2);
         }else if(dx<0 && dy>0){
-            dy = -0.4;
+            dy = dy-(dy*2);
         }
 
         // increment score
@@ -133,6 +139,12 @@ function moveBall() {
 // 
 // eventlistener to move bat
 window.addEventListener('keydown', (e) => {
+    let dis = 10;
+
+    // gradually increasing size of bat
+    if((score+1)%6==0){
+        dis += 2; 
+    }
     if (e.keyCode != 32) {
         //  right rightBoundary
         let rightBoundary = parseInt(batPath.getBoundingClientRect().right);
@@ -144,12 +156,12 @@ window.addEventListener('keydown', (e) => {
         //  moving right
         if (batRight < rightBoundary && e.keyCode == 39) {
 
-            bat.style.left = batleft + 10 + "px";
+            bat.style.left = batleft + dis + "px";
 
         }
         //  moving left
         else if (batleft > 0 && e.keyCode == 37) {
-            bat.style.left = batleft - 10 + "px";
+            bat.style.left = batleft - dis + "px";
 
         }
     }
