@@ -1,27 +1,35 @@
+/* Css rule for full body */
 body{
     margin: 0;
 }
+
+/* Carpet for our game */
 #game{
     background-color: green;
     height: 100%;
     width: 100%;
 }
+
+/* this tag contains Score and High Score */
 p{
     margin: 0;
 }
+
+/* this div contain p of Score and High Score */
 #stats{
     position: absolute;
     top: 2px;
     height: 40px;
     width: 150px;
     text-align: center;
-    background-color: rgb(70, 67, 62,0.5);
+    background-color: rgb(70, 67, 62,0.1);
     color: azure;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
 }
 
+/* CSS for ball */
 #ball{
     position: absolute;
     height: 2.5vw;
@@ -31,6 +39,8 @@ p{
     top: 100px;
     left: 188.15px;
 }
+
+/* Instruction div */
 #instruct{
     position: absolute;
     top: 30%;
@@ -39,12 +49,16 @@ p{
     display: block;
     background-color: rgb(95, 135, 121,0.5);
 }
-.ballpath{
+
+/* sliding path for bat */
+.batpath{
     position: fixed;
     bottom: 0;
     height: fit-content;
     width: 100%;
 }
+
+/* CSS rule for bat */
 #bat{
     position: relative;
     height: 2vw;
