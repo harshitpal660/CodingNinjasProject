@@ -1,0 +1,50 @@
+/* Home Page */
+body{
+    margin: 0;
+    position: relative;
+}
+
+/* Logo div CSS */
+#logo{
+    width: 52px;
+    height: 52px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+#logo img{
+    max-width: 100px;
+    max-height: 100px;
+    position: relative;
+    right: 25px;
+    bottom: 8px;
+}
+
+
+#gif img{
+    height: 100%;
+    width: 100%;
+    
+}
+
+/* navbar */
+.navigate{
+    top: -120px;
+    z-index: 1;
+}
+
+/* search bar */
+#searchbar{
+    position: absolute;
+    top: 10vh;
+    left: 50%;
+    transform: translate(-50%);
+    width: auto;
+}
+
+.blur   {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+}
