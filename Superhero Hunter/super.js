@@ -1,5 +1,5 @@
-
 // some basic variable
+let searchbar = document.querySelector("#searchbar");
 let searchinput = document.querySelector("#searchbar .form-control");
 let backgroundimg = document.getElementsByTagName("img")[1];
 // let submit = document.getElementById("submit");
@@ -25,16 +25,29 @@ setTimeout(function () {
 }, 0);
 
 // when we click on search input automatically background image will gets blurred
-searchinput.addEventListener('click', () => {
+searchbar.addEventListener('mouseover', () => {
         blurr(backgroundimg);
 });
+
+searchbar.addEventListener('mouseout', () => {
+        blurr(backgroundimg);
+});
+
 
 function search() {
 
 }
 
 function blurr(tag) {
-        tag.setAttribute("class", "blur");
+        if(tag.className == ""){
+                tag.setAttribute("class", "blur");
+        }
+        else{
+                tag.setAttribute("class", "");
+        }
+        // let classes = tag.className;
+        // console.log(classes);
+        
 }
 
 
