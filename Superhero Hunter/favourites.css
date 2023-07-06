@@ -1,0 +1,29 @@
+.navigate{
+  position: absolute;
+  top: 0;
+}
+#logo {
+  width: 52px;
+  height: 52px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+#logo img {
+  max-width: 100px;
+  max-height: 100px;
+  position: relative;
+  right: 25px;
+  bottom: 8px;
+}
+
+/* search bar */
+#searchbar {
+  position: absolute;
+  top: 10vh;
+  left: 50%;
+  transform: translate(-50%);
+  width: auto;
+  display: flex;
+  
+}
