@@ -43,7 +43,7 @@
 
       <!-- Search space -->
       <div class="container-fluid" id="searchbar">
-        <input class="form-control me-2" type="search" value="Iron Man" aria-label="Search">
+        <input class="form-control me-2" type="search" placeholder="Search Your Hero" aria-label="Search">
         <button id="submit-button">Search</button>
       </div>
 
@@ -56,10 +56,20 @@
     <img src="animation1.gif">
   </div>
 
+  <!-- this div is for custom notifications -->
   <div id="liveAlertPlaceholder" class="fixed-top"></div>
-  <div class="list"></div>
-  <div class="display-container" id="show-container">
 
+  <!-- this list show all suggestions while searching -->
+  <div class="list">
+
+  </div>
+
+  <!-- this container displays the search result -->
+  <div class="display-container" id="show-container">
+    <div class="card-container" id="card-container">
+      <div class="front"></div>
+      <div class="back"></div>
+    </div>
   </div>
 
 

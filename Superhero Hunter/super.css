@@ -1,202 +1,244 @@
 /* Home Page */
 body {
   margin: 0;
-  position: relative;
+  /* position: relative; */
 }
 
-/* --------------------------------------------------------- */
-/* Logo div CSS */
-#logo {
-  width: 52px;
-  height: 52px;
-  overflow: hidden;
-  border-radius: 50%;
-}
-
-#logo img {
-  max-width: 100px;
-  max-height: 100px;
-  position: relative;
-  right: 25px;
-  bottom: 8px;
-}
-
-/* -------------------------------------------------------------- */
-/* background gif */
-#gif img {
-  height: 100%;
-  width: 100%;
-
-}
-
-/* -------------------------------------------------------------- */
-/* navbar */
-.navigate {
-  top: -120px;
-  z-index: 1;
-}
-
-/* --------------------------------------------------------------- */
-/* search bar */
-#searchbar {
-  position: absolute;
-  top: 10vh;
-  left: 50%;
-  transform: translate(-50%);
-  width: auto;
-  display: flex;
-  
-}
-
-.blur {
-  filter: blur(5px);
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-}
-
-/* --------------------------------------------------------------- */
-/* Heroes cards */
-.display-container {
-  display: none;
-  height: fit-content;
-  width: fit-content;
-  position: absolute;
-  left: 50%;
-  bottom: 50%;
-  transform: translate(-50%, +50%);
-  background-color: rgb(65, 60, 60, 0.8);
-
-}
-
-/* action div contain fav and info buttons */
-#action{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.container-character-image {
-  max-width: 100px;
-  max-height: 100px;
-  overflow: hidden;
-  border-radius: 50%;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%);
-}
-
-.container-character-image img {
-  max-width: 100px;
-  max-height: 100px;
-}
-
-/* media queries for card */
-@media only screen and (max-width: 1600px) {
-  .card-container {
-    width: 20vw;
+/*-------------------------------------------------------------------------------- */
+  /* Logo div CSS */
+  #logo {
+    width: 52px;
+    height: 52px;
+    overflow: hidden;
+    border-radius: 50%;
   }
-}
-
-@media only screen and (max-width: 1400px) {
-  .card-container {
-    width: 25vw;
+  /* logo image CSS */
+  #logo img {
+    max-width: 100px;
+    max-height: 100px;
+    position: relative;
+    right: 25px;
+    bottom: 8px;
   }
-}
 
-@media only screen and (max-width: 1200px) {
-  .card-container {
-    width: 25vw;
+  /* -------------------------------------------------------------- */
+  /* background gif */
+  #gif img {
+    height: 100%;
+    width: 100%;
+
   }
-}
 
-@media only screen and (max-width: 1000px) {
-  .card-container {
-    width: 35vw;
+  /* -------------------------------------------------------------- */
+  /* navbar */
+  .navigate {
+    top: -120px;
+    z-index: 1;
   }
-}
 
-@media only screen and (max-width: 800px) {
-  .card-container {
-    width: 50vw;
+  /* --------------------------------------------------------------- */
+  /* search bar */
+  #searchbar {
+    position: absolute;
+    top: 10vh;
+    left: 50%;
+    transform: translate(-50%);
+    width: auto;
+    display: flex;
+    
   }
-}
 
-@media only screen and (max-width: 600px) {
-  .card-container {
-    width: 70vw;
+  /* style to blurr any element*/
+  .blur {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
   }
-}
 
-@media only screen and (max-width: 400px) {
-  .card-container {
-    width: 90vw;
+  /* --------------------------------------------------------------- */
+  /* Heroes cards thus div contain hero card*/
+  .display-container {
+    display: none;
+    height: fit-content;
+    width: fit-content;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, +50%);
+
   }
-}
+    /* this div container contains both front and back face of the card */
+    .card-container{
+      /* position: absolute; */
+      height: 390px;
+      width: 280px;
+      transform-style: preserve-3d;
+      transition: all 0.8s ease;
+    }
 
-/* Name of character inside card */
-.character-name {
-  font-size: large;
-  font-weight: 500;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color: rgb(224, 233, 241);
-  text-align: center;
-}
+    .front{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      background: rgb(65, 60, 60, 0.8);;
+      color: #000;
+      text-align: center;
+    }
+    
+    .back{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      background: rgb(65, 60, 60, 0.8);;
+      color: white;
+      text-align: center;
+      transform: rotateY(180deg);
+    }
+    
+    .flipCard{
+      transform: rotateY(180deg);
+    }
 
-/* character desc inside card */
-.character-description {
-  color: rgb(224, 233, 241);
-  top: 130px;
-}
+    /* this div contains hero image which shown after clicking in search button */
+    .container-character-image {
+      max-width: 150px;
+      max-height: 150px;
+      overflow: hidden;
+      border-radius: 50%;
+      position: relative;
+      top:10px;
+      left: 50%;
+      transform: translate(-50%);
+    }
 
-/* favourite button */
-#regular {
-  color: yellow;
-  cursor: pointer;
+    .container-character-image img {
+      max-width: 150px;
+      max-height: 150px;
+    }
 
-}
 
-#solid {
-  display: none;
-  color: yellow;
-  cursor: pointer;
-}
+    /* Name of character inside card */
+    .character-name {
+      font-size: large;
+      font-weight: 500;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      color: rgb(224, 233, 241);
+      text-align: center;
+      margin-top: 10px;
+    }
 
-#info {
-  color: rgb(255, 8, 0);
-  cursor: pointer;
+    /* character desc inside card */
 
-}
+    .character-description{
+      color: rgb(224, 233, 241);
+      top: 130px;
+      text-align: center;
+      cursor: pointer;
+    }
 
-/* list item of suggestion */
-.list {
-  position: absolute;
-  width: 40%;
-  background-color: #616361a9;
-  color: #ffffff;
-  z-index: 1;
-  left: 50%;
-  transform: translate(-50%);
-  top: 110px;
-  max-height: 200px;
-  overflow: scroll;
-  /* -webkit-scrollbar {
-        display: none;
-    } */
+    .character-description:hover{
+      font-size: larger;
+    }
+    .character-name:hover{
+      font-size: 30px;
+    }
 
-}
+    .character-description-back{
+      text-align: justify;
+      padding: 10px 5px 5px 5px;
+    }
 
-.list::-webkit-scrollbar {
-  display: none;
-}
+    /* this div contain add to fav info and close button */
+    #action{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin: 4vh 0 4vh 0;
+    }
 
-.autocomplete-items {
-  padding: 0.5em;
-}
+    /* card buttons */
+    #regular {
+      color: yellow;
+    }
+    #solid {
+      display: none;
+      color: yellow;
+    }
+    #close{
+      color: rgb(255, 8, 0);
+    }
+    .actionbutton:hover{
+      font-size: 20px;
+      cursor: pointer;
+    }
+    /* buttton to swap card */
+    .swap{
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translate(-50%);
+      height: 50px;
+      width: 50px;
+      overflow: hidden;
+    }
+    .swap img{
+      height: 100%;
+      width: 100%;
+    }
+  /* --------------------------------------------------------------------------------- */
+  /* list item of suggestion */
+  .list {
+    position: absolute;
+    width: 40%;
+    background-color: #616361a9;
+    color: #ffffff;
+    z-index: 1;
+    left: 50%;
+    transform: translate(-50%);
+    top: 110px;
+    max-height: 200px;
+    overflow: scroll;
+  }
 
-.autocomplete-items:hover {
-  background-color: #ddd;
-  color: #171821;
-}
+    /* css to diable scrollbars which came by default while any scroll view created */
+    .list::-webkit-scrollbar {
+      display: none;
+    }
+
+    .autocomplete-items {
+      padding: 0.5em;
+    }
+
+    .autocomplete-items:hover {
+      background-color: #ddd;
+      color: #171821;
+    }
+    /* this div contain image and text which is shown during suggestions */
+    .parent{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .img-container{
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .img-container img{
+      height: 100%;
+      width: 100%;
+      margin-right: 70px;
+    }
+
+    .text{
+      padding-left: 20px;
+      margin: auto;
+    }

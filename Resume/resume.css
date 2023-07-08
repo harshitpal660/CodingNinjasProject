@@ -382,6 +382,7 @@ section:nth-child(2n + 1) {
     top: 0;
     left: 0;
     height: 100%;
+    width: 100%;
     color: transparent;
     text-align: center;
     padding: 10px;

@@ -27,19 +27,3 @@
   display: flex;
   
 }
-
-#parent{
-  position: absolute;
-  top: 150px;
-  text-align: center;
-  font-family: 'Inconsolata', monospace;
-
-}
-
-/* div which contain all fav cards */
-.flex-container{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
