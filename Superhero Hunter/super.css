@@ -58,7 +58,7 @@ body {
   }
 
   /* --------------------------------------------------------------- */
-  /* Heroes cards thus div contain hero card*/
+  /* Heroes cards this div contain hero card*/
   .display-container {
     display: none;
     height: fit-content;
@@ -116,8 +116,8 @@ body {
     }
 
     .container-character-image img {
-      max-width: 150px;
-      max-height: 150px;
+      max-width: 100%;
+      max-height: 100%;
     }
 
 

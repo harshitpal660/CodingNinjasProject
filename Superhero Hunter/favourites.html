@@ -9,13 +9,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="favourites.css" rel="stylesheet">
 
   <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600;900&display=swap" rel="stylesheet">
 
+  <link href="favourites.css" rel="stylesheet">
 </head>
 
 <body>
@@ -48,32 +48,26 @@
 
     </div>
     <!-- Search space -->
-    <div class="container-fluid" id="searchbar">
+    <!-- <div class="container-fluid" id="searchbar">
       <input class="form-control me-2" type="search" value="" aria-label="Search">
       <button id="submit-button">Search</button>
-    </div>
+    </div> -->
   </nav>
 
+  <!-- this div is for custom notifications -->
+  <div id="liveAlertPlaceholder" class="fixed-top"></div>
   <!-- flex container to show all fav cards -->
   <div id="parent">
     <div>
       <h1>Favourites</h1>
     </div>
-    <div class="flex-container">
-      <div class="div" style="margin: 10px; height: 300px; width: 200px; background-color: blue;"></div>
-      <div class="div" style="margin: 10px; height: 300px; width: 200px; background-color: blue;"></div>
-      <div class="div" style="margin: 10px; height: 300px; width: 200px; background-color: blue;"></div>
-      <div class="div" style="margin: 10px; height: 300px; width: 200px; background-color: blue;"></div>
-      <div class="div" style="margin: 10px; height: 300px; width: 200px; background-color: blue;"></div>
-      <div class="div" style="margin: 10px; height: 300px; width: 200px; background-color: blue;"></div>
-      <div class="div" style="margin: 10px; height: 300px; width: 200px; background-color: blue;"></div>
-      <div class="div" style="margin: 10px; height: 300px; width: 200px; background-color: blue;"></div>
-      <div class="div" style="margin: 10px; height: 300px; width: 200px; background-color: blue;"></div>
-      <div class="div" style="margin: 10px; height: 300px; width: 200px; background-color: blue;"></div>
-      <div class="div" style="margin: 10px; height: 300px; width: 200px; background-color: blue;"></div>
-      <div class="div" style="margin: 10px; height: 300px; width: 200px; background-color: blue;"></div>
-      <div class="div" style="margin: 10px; height: 300px; width: 200px; background-color: blue;"></div>
-      <div class="div" style="margin: 10px; height: 300px; width: 200px; background-color: blue;"></div>
+    <div class="display-container">
+      <!-- <div class="card-container"> -->
+        <!-- <div id="front">
+        </div>
+        <div id="back">
+        </div> -->
+      <!-- </div> -->
     </div>
   </div>
 
@@ -90,6 +84,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
     integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
     crossorigin="anonymous"></script>
+  <script src="apiinfo.js"></script>
+  <script src="favourites.js"></script>
 </body>
 
 </html>

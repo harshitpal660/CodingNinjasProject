@@ -158,10 +158,10 @@ function displayCard(jsonData) {
         <img src="${element.thumbnail["path"] + "." + element.thumbnail["extension"]
         }"/></div>
         <div class="character-name">${element.name}</div>
-        <div class="character-description">Series: ${element.series.available}</div>
-        <div class="character-description">Comics: ${element.comics.available}</div>
-        <div class="character-description">Events: ${element.events.available}</div>
-        <div class="character-description">Stories: ${element.stories.available}</div>
+        <div class="character-description series">Series: ${element.series.available}</div>
+        <div class="character-description comics">Comics: ${element.comics.available}</div>
+        <div class="character-description events">Events: ${element.events.available}</div>
+        <div class="character-description stories">Stories: ${element.stories.available}</div>
 
         <div id="action">
           <div id="solid" class="actionbutton" onClick="removeFromFav('${element.name}')" data-toggle="tooltip" data-placement="top" title="remove from favourite">
