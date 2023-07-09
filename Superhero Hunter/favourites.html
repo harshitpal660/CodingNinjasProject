@@ -16,15 +16,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600;900&display=swap" rel="stylesheet">
 
   <link href="favourites.css" rel="stylesheet">
+  <link rel="stylesheet" href="Global.css">
 </head>
 
 <body>
 
   <!-- Bootstrap navigation bar -->
   <nav class="navbar navbar-expand-sm m-0 p-0">
-    <div class="container-fluid navigate position-absolute bg-danger">
+    <div class="container-fluid navigate bg-danger">
       <a class="navbar-logo" href="super.html">
-        <div id="logo"><img src="logo.gif"></div>
+        <div id="logo"><img src="Images/logo.gif"></div>
       </a>
       <button class="navbar-toggler text-warning" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,12 +48,8 @@
       </div>
 
     </div>
-    <!-- Search space -->
-    <!-- <div class="container-fluid" id="searchbar">
-      <input class="form-control me-2" type="search" value="" aria-label="Search">
-      <button id="submit-button">Search</button>
-    </div> -->
   </nav>
+
 
   <!-- this div is for custom notifications -->
   <div id="liveAlertPlaceholder" class="fixed-top"></div>
@@ -70,6 +67,33 @@
       <!-- </div> -->
     </div>
   </div>
+  <!-- sliding windows for series events stories and comics -->
+  
+  <div id="carouselExample" class="carousel slide">
+    <div class="actionbutton cl" data-toggle="tooltip" data-placement="top" title="close">
+      <i class="fa-regular fa-circle-xmark" ></i>
+    </div>
+    <h2 id="magzines"></h2>
+    <div class="carousel-inner">
+      <!-- <div class="carousel-item active">
+        <img src="https://images.unsplash.com/photo-1561360301-4048f2dd531a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBob3RvJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1483232539664-d89822fb5d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGhvdG8lMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww&w=1000&q=80" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1581881067989-7e3eaf45f4f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGhvdG8lMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60" class="d-block w-100" alt="...">
+      </div> -->
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 
 
   <!-- <div class="display-container" id="show-container"> -->
@@ -84,7 +108,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
     integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
     crossorigin="anonymous"></script>
-  <script src="apiinfo.js"></script>
+  <script src="Global.js"></script>
   <script src="favourites.js"></script>
 </body>
 

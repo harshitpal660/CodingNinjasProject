@@ -16,14 +16,3 @@
   right: 25px;
   bottom: 8px;
 }
-
-/* search bar */
-#searchbar {
-  position: absolute;
-  top: 10vh;
-  left: 50%;
-  transform: translate(-50%);
-  width: auto;
-  display: flex;
-  
-}

@@ -1,0 +1,58 @@
+/* Home Page */
+body {
+    margin: 0;
+    /* position: relative; */
+  }
+  
+  /*-------------------------------------------------------------------------------- */
+    /* Logo div CSS */
+    #logo {
+      width: 52px;
+      height: 52px;
+      overflow: hidden;
+      border-radius: 50%;
+    }
+    /* logo image CSS */
+    #logo img {
+      max-width: 100px;
+      max-height: 100px;
+      position: relative;
+      right: 25px;
+      bottom: 8px;
+    }
+    
+    .carousel{
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        position: absolute;
+        height: 70vh;
+        width: 50vh;
+        overflow: hidden;
+        display: none;
+        background-color: rgb(227, 160, 160);
+    }
+    .carousel-item,.carousel-item img{
+        height: 100%;
+        width: 100%;
+        
+    }
+
+    #magzines{
+      text-align: center;
+      color: rgb(84, 155, 255);
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
+      font-size: xx-large;
+    }
+
+    .title{
+      text-align: center;
+      color: brown;
+      margin-top: 50%;
+
+    }
+
+    .cl{
+      display: flex;
+      justify-content: center;
+    }

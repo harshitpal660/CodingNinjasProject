@@ -1,14 +1,4 @@
-// hashvalue is generated using ts + publickey + privateKey
-const [timestamp, apiKey, hashValue] = [ts, publicKey, hashVal];
-let heroes = JSON.parse(localStorage.getItem("list"));
-
-// this cardcontainer will caontain our hero card
-let container = document.getElementsByClassName("display-container")[0];
-// let card = document.getElementsByClassName("card-container")[0];
-// // this container displayed the front side of card when we click on search button
-// let showContainerFront = document.getElementsByClassName("front")[0];
-// // this container displayed the back side of card when we click on more info button
-// let showContainerBack = document.getElementsByClassName("back")[0];
+// this iife will display all our fav cards when our apps relode
 (async () => {
 
   if (heroes != null && Object.keys(heroes).length != 0) {
@@ -26,7 +16,7 @@ let container = document.getElementsByClassName("display-container")[0];
     }
   } else {
 
-    container.innerHTML = "Empty";
+    showContainer.innerHTML = "Empty";
   }
 })();
 
@@ -55,10 +45,10 @@ function displayCard(jsonData,i) {
                           <img src="${element.thumbnail["path"] + "." + element.thumbnail["extension"]}"/>
                         </div>
                         <div class="character-name">${element.name}</div>
-                        <div class="character-description series">Series: ${element.series.available}</div>
-                        <div class="character-description comics">Comics: ${element.comics.available}</div>
-                        <div class="character-description events">Events: ${element.events.available}</div>
-                        <div class="character-description stories">Stories: ${element.stories.available}</div>
+                        <div class="character-description series" onClick="getSeries('${element.id}')">Series: ${element.series.available}</div>
+                        <div class="character-description comics" onClick="getComics('${element.id}')">Comics: ${element.comics.available}</div>
+                        <div class="character-description events" onClick="getEvents('${element.id}')">Events: ${element.events.available}</div>
+                        <div class="character-description stories" onClick="getStories('${element.id}')">Stories: ${element.stories.available}</div>
 
                         <div class="action">
                           <div class="actionbutton solid" onClick="removeFromFav('${element.name}',${i})" data-toggle="tooltip"
@@ -70,7 +60,7 @@ function displayCard(jsonData,i) {
                             <i class="fa-regular fa-heart"></i>
                           </div>
                           <div class="actionbutton swap" onClick="flipcard(${i})" data-toggle="tooltip" data-placement="top" title="swap">
-                            <img src="swap.png">
+                            <img src="Images/swap.png">
                           </div>
                         </div>
                       </div>
@@ -85,12 +75,12 @@ function displayCard(jsonData,i) {
                         <i class="fa-regular fa-heart"></i>
                       </div>
                       <div class="actionbutton swap" onClick="flipcard(${i})" data-toggle="tooltip" data-placement="top" title="swap">
-                        <img src="swap.png">
+                        <img src="Images/swap.png">
                       </div>
                     </div>
                       </div>`;
     // console.log(card);
-    container.appendChild(card);
+    showContainer.appendChild(card);
     // console.log(container)
 
 
@@ -100,16 +90,15 @@ function displayCard(jsonData,i) {
     // in that case we must dislplay favourite button as marked 
     //  this code will help me to do that
 
-    // getting the list of heros stored in localstorage
-    let list = JSON.parse(localStorage.getItem("list"));
+
 
     // this condition will check whether our searched hero is already present 
     // in favourite list or not
-    if (list != null && Object.keys(list).length != 0) {
+    if (heroes != null && Object.keys(heroes).length != 0) {
       // if its present change display of solid fav button to block 
       // and regular to none
       let j =0;
-      for (let key in list) {
+      for (let key in heroes) {
         if (key == element.name) {
           document.getElementsByClassName("regular")[j].style.display = "none";
           document.getElementsByClassName("regular")[j+1].style.display = "none";
@@ -125,53 +114,44 @@ function displayCard(jsonData,i) {
   // container.style.display = "block";
 }
 
-function flipcard(i){
-  document.getElementsByClassName("card-container")[i].classList.toggle("flipCard")
-}
 
 // this function is called when we click on remove fav button
 function removeFromFav(name,i) {
-  console.log(document.getElementsByClassName("regular"))
   document.getElementsByClassName("regular")[2*i].style.display = "block";
   document.getElementsByClassName("regular")[2*i+1].style.display = "block";
   document.getElementsByClassName("solid")[2*i].style.display = "none";
   document.getElementsByClassName("solid")[2*i+1].style.display = "none";
-  let charArr = localStorage.getItem("list");
-  charArr = JSON.parse(charArr);
-  delete charArr[name];
-  localStorage.setItem("list", JSON.stringify(charArr))
+  // let charArr = localStorage.getItem("list");
+  // charArr = JSON.parse(charArr);
+  delete heroes[name];
+  localStorage.setItem("list", JSON.stringify(heroes))
   showAlert("removed from favourite")
 }
 
 // this function is called when we click on add fav button
 function addToFav(name,i) {
-  console.log(i)
+  // console.log(i)
   document.getElementsByClassName("regular")[2*i].style.display = "none";
   document.getElementsByClassName("regular")[2*i+1].style.display = "none";
   document.getElementsByClassName("solid")[2*i].style.display = "block";
   document.getElementsByClassName("solid")[2*i+1].style.display = "block";
-  let charArr = localStorage.getItem("list");
-  if (charArr == null) {
-    charArr = {};
-    charArr[name] = name;
+  // let charArr = localStorage.getItem("list");
+  if (heroes == null) {
+    heroes = {};
+    heroes[name] = name;
     console.log(charArr)
-    localStorage.setItem("list", JSON.stringify(charArr));
+    localStorage.setItem("list", JSON.stringify(heroes));
     return;
   }
-  charArr = JSON.parse(charArr);
-  charArr[name] = name;
-  console.log(charArr);
-  localStorage.setItem("list", JSON.stringify(charArr));
+  heroes = JSON.parse(heroes);
+  heroes[name] = name;
+  console.log(heroes);
+  localStorage.setItem("list", JSON.stringify(heroes));
   showAlert("added to favourite")
 
 }
 
-// this function is gets called when we click on close button
-function hideContainer(){
-  container.style.display = "none";
-}
-
-// custom notification fuction 
+// custom notification fuction  -G
 function showAlert(msg) {
   //alert placeholder is a div which appers when ever we generate notifications
   const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
