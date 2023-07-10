@@ -143,9 +143,7 @@ function addToFav(name,i) {
     localStorage.setItem("list", JSON.stringify(heroes));
     return;
   }
-  heroes = JSON.parse(heroes);
   heroes[name] = name;
-  console.log(heroes);
   localStorage.setItem("list", JSON.stringify(heroes));
   showAlert("added to favourite")
 

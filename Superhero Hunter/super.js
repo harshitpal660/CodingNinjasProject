@@ -164,16 +164,16 @@ function displayCard(jsonData) {
         <div class="character-description stories" onClick="getStories('${element.id}')">Stories: ${element.stories.available}</div>
 
         <div id="action">
-          <div id="solid" class="actionbutton" onClick="removeFromFav('${element.name}')" data-toggle="tooltip" data-placement="top" title="remove from favourite">
+          <div class="actionbutton solid" onClick="removeFromFav('${element.name}')" data-toggle="tooltip" data-placement="top" title="remove from favourite">
             <i class="fa-solid fa-heart"></i>
           </div>
-          <div id="regular" class="actionbutton" onClick="addToFav('${element.name}')" data-toggle="tooltip" data-placement="top" title="add to favourite">
+          <div class="actionbutton regular" onClick="addToFav('${element.name}')" data-toggle="tooltip" data-placement="top" title="add to favourite">
             <i class="fa-regular fa-heart"></i>
           </div>
           <div class="actionbutton swap" onClick="flipcard(${0})" data-toggle="tooltip" data-placement="top" title="swap">
             <img src="Images/swap.png">
           </div>
-          <div id="close" class="actionbutton" onClick="hideContainer()" data-toggle="tooltip" data-placement="top" title="close">
+          <div class="actionbutton close" onClick="hideContainer()" data-toggle="tooltip" data-placement="top" title="close">
             <i class="fa-regular fa-circle-xmark" ></i>
           </div>
         </div>`;
@@ -200,8 +200,8 @@ function displayCard(jsonData) {
       // and regular to none
       for (let key in heroes) {
         if (key == element.name) {
-          document.getElementById("regular").style.display = "none";
-          document.getElementById("solid").style.display = "block"
+          document.getElementsByClassName("regular")[0].style.display = "none";
+          document.getElementsByClassName("solid")[0].style.display = "block"
         }
       }
 
@@ -248,8 +248,8 @@ function blurr(tag) {
 
 // this function is called when we click on remove fav button
 function removeFromFav(name) {
-  document.getElementById("regular").style.display = "block";
-  document.getElementById("solid").style.display = "none"
+  document.getElementsByClassName("regular")[0].style.display = "block";
+          document.getElementsByClassName("solid")[0].style.display = "none"
   // let charArr = localStorage.getItem("list");
   // charArr = JSON.parse(charArr);
   delete heroes[name];
@@ -259,8 +259,8 @@ function removeFromFav(name) {
 
 // this function is called when we click on add fav button
 function addToFav(name) {
-  document.getElementById("regular").style.display = "none";
-  document.getElementById("solid").style.display = "block"
+  document.getElementsByClassName("regular")[0].style.display = "none";
+  document.getElementsByClassName("solid")[0].style.display = "block"
   // let charArr = localStorage.getItem("list");
   if (heroes == null) {
     heroes = {};

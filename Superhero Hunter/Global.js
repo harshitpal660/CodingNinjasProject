@@ -1,13 +1,15 @@
 
 // getting the list of heros stored in localstorage
-const heroes = JSON.parse(localStorage.getItem("list")); // - G  
+const heroes = JSON.parse(localStorage.getItem("list"));  
 
-// this cardcontainer will contain our hero card - G
+// this cardcontainer will contain our hero card 
 const showContainer = document.getElementsByClassName("display-container")[0];
+
+// this carousle will displayed when we click on stories series comics and events
 const carausel_inner = document.getElementsByClassName("carousel-inner")[0];
 const carausel = document.getElementById("carouselExample");
 
-// console.log(showcontainer);
+// 
 function flipcard(i) {  // - G
   document.getElementsByClassName("card-container")[i].classList.toggle("flipCard")
 }
