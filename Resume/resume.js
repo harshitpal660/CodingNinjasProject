@@ -134,15 +134,30 @@ function fillBars(){
 
 // percentage viewed
 
-var box = document.querySelector("#child");
+// var box = document.querySelector("#child");
 
-window.addEventListener("scroll",()=>{
-  let docElem = document.documentElement,
-  docBody = document.body,
-  scrollTop = docElem['scrollTop'] || docBody['scrollTop'],  //browser support, docElem or docBody  // the heigth we are on currently starting from top 
-  scrollBottom = (docElem['scrollHeight'] || docBody['scrollHeight']) - window.innerHeight, // the heigth of the entire content
-  scrollPercent = scrollTop / scrollBottom *100 + '%';
+// window.addEventListener("scroll",()=>{
+//   let docElem = document.documentElement,
+//   docBody = document.body,
+//   scrollTop = docElem['scrollTop'] || docBody['scrollTop'],  //browser support, docElem or docBody  // the heigth we are on currently starting from top 
+//   scrollBottom = (docElem['scrollHeight'] || docBody['scrollHeight']) - window.innerHeight, // the heigth of the entire content
+//   scrollPercent = scrollTop / scrollBottom *100 + '%';
 
-  box.style.width = scrollPercent;
-  console.log(Math.abs(scrollPercent));
-});
+//   box.style.width = scrollPercent;
+//   console.log(Math.abs(scrollPercent));
+// });
+
+
+function handleSendButtonClick(event) {
+  event.preventDefault();
+  const name = document.getElementById("input-name").value;
+  const email = document.getElementById("input-email").value;
+  const message = document.getElementById("input-message").value;
+  console.log("name",name);
+  console.log("email",email);
+  console.log("message",message);
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent('Message from ' + name)}&body=${encodeURIComponent(message)}`;
+  // Redirect to Gmail
+  console.log(gmailUrl);
+  window.location.href = gmailUrl;
+}

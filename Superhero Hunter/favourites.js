@@ -126,6 +126,7 @@ function removeFromFav(name,i) {
   delete heroes[name];
   localStorage.setItem("list", JSON.stringify(heroes))
   showAlert("removed from favourite")
+  window.location.reload();
 }
 
 // this function is called when we click on add fav button
@@ -146,26 +147,6 @@ function addToFav(name,i) {
   heroes[name] = name;
   localStorage.setItem("list", JSON.stringify(heroes));
   showAlert("added to favourite")
-
+  window.location.reload();
 }
 
-// custom notification fuction  -G
-function showAlert(msg) {
-  //alert placeholder is a div which appers when ever we generate notifications
-  const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
-  const appendAlert = (message, type) => {
-    const wrapper = document.createElement('div')
-    wrapper.innerHTML = [
-      `<div class="alert alert-${type} alert-dismissible bg-danger" role="alert">`,
-      `   <div class="text-warning">${message}</div>`,
-      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-      '</div>'
-    ].join('')
-
-    alertPlaceholder.append(wrapper)
-  }
-
-
-  appendAlert(msg, 'success');
-
-}

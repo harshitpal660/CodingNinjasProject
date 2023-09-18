@@ -1,6 +1,6 @@
 
 // getting the list of heros stored in localstorage
-const heroes = JSON.parse(localStorage.getItem("list"));  
+let heroes = JSON.parse(localStorage.getItem("list"));  
 
 // this cardcontainer will contain our hero card 
 const showContainer = document.getElementsByClassName("display-container")[0];
@@ -33,7 +33,11 @@ function showAlert(msg) {
       '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
       '</div>'
     ].join('')
-
+    let audio = new Audio("Sounds/Notifications.mp3");
+    audio.play();
+    setTimeout(()=>{
+      audio.pause();
+    },2000);
     alertPlaceholder.append(wrapper)
   }
 

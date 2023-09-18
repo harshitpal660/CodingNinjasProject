@@ -15,6 +15,7 @@
       let ele = document.getElementsByClassName("navigate")[0];
       if (parseInt(getComputedStyle(ele).top) == 0) {
         clearInterval(interval);
+        
       }
 
       // gradually we are bringing our navbar down from top after my gif stops
@@ -24,8 +25,6 @@
   }, 9000);
 
 })();
-
-
 // some basic variable
 let searchbar = document.querySelector("#searchbar");
 let input = document.querySelector("#searchbar .form-control");
@@ -41,7 +40,7 @@ let showContainerBack = document.getElementsByClassName("back")[0];
 
 // this container is displayed when we search any super hero
 let listContainer = document.querySelector(".list");
-let submit = document.getElementById("submit");
+// let submit = document.getElementById("submit");
 
 
 // this function is to remove suggestions which comes while searching
@@ -190,8 +189,7 @@ function displayCard(jsonData) {
     // in that case we must dislplay favourite button as marked 
     //  this code will help me to do that
 
-    // getting the list of heros stored in localstorage
-    let heroes = JSON.parse(localStorage.getItem("list"));
+    
 
     // this condition will check whether our searched hero is already present 
     // in favourite list or not
@@ -265,7 +263,7 @@ function addToFav(name) {
   if (heroes == null) {
     heroes = {};
     heroes[name] = name;
-    console.log(charArr)
+    console.log(heroes);
     localStorage.setItem("list", JSON.stringify(heroes));
     return;
   }
